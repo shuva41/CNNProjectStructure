@@ -15,5 +15,13 @@
   1. Setup.py will build the package from the local packages that we have created using the configuration mentioned in this file and setup.cfg file.
 - **Step 06:** Create tox.ini file for testing purposes in local environment.
   1. Tox is a tool for automating and standardizing testing in Python. It is a generic virtualenv management and test command line tool you can
-- **Step 07:** Automate the environment creation process by init_setup.sh: shell scripting. All commnads to be written in a linux command prompt.
+- **Step 07:** Automate the environment creation and package installation process by init_setup.sh: shell scripting. All commnads to be written in a linux command prompt.
   > bash init_setup.sh
+### Workflow
+1. Create trials in research/trials.ipynb
+2. Create config.yaml file
+3. entity file
+4. Create codes in the components
+5. Create pipelines for training and prediction
+6. Test your packages
+7. DVC to reproducing the pipeline
