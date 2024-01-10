@@ -1,3 +1,9 @@
-# Here we will define the parameters of the models
+# Here we will define the parameters of the pre-trained models
 AUGMENTATION: True
+IMAGE_SIZE: [224, 224, 3] # as per VGG 16 model
+BATCH_SIZE: 16
+INCLUDE_TOP: False
+EPOCHS: 1
+CLASSES: 2
+WEIGHTS: imagenet
 LEARNING_RATE: 0.01
