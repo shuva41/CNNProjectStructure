@@ -3,7 +3,7 @@ from CNNClassifier.config.configuration import ConfigurationManager
 from CNNClassifier import logger
 
 logger.info("Stage 01: Data Ingestion started.")
-# Setting Configuration of Input for dat_ingestion.
+# Setting Configuration of Input for data_ingestion.
 config = ConfigurationManager()
 data_ingestion_config = config.get_data_ingestion_config()
 # This is where we are passing the configuration in config.yaml file to the DataIngestion class in stage_01_data_ingestion.py file.

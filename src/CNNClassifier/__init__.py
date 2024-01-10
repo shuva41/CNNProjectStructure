@@ -16,8 +16,7 @@ log_filepath = os.path.join(log_dir, 'CNNClassifierLogs.log')
 os.makedirs(log_dir, exist_ok=True)
 
 # Configure the logging
-logging.basicConfig(filename=log_filepath,
-                    level=logging.INFO,
+logging.basicConfig(level=logging.INFO,
                     format=logging_str,
                     handlers=[logging.FileHandler(log_filepath), logging.StreamHandler(sys.stdout)])
 

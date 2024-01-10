@@ -14,13 +14,26 @@ class DataIngestion:
         self.config = config
 
     def download_file(self):
-        pass
+        if not os.path.exists(self.config.local_data_file):
+            logger.info("Downloading Data")
+            filename, header = request.urlretrieve(url=self.config.source_URL, filename=self.config.local_data_file)
+        else:
+            logger.info("Data already downloaded")
 
-    def get_updated_list_of_files(self):
-        pass
+    def get_updated_list_of_files(self, list_of_files):
+        return [f for f in list_of_files if f.endswith('.jpg')]
 
-    def preprocess(self):
-        pass
+    def preprocess(self, zf: ZipFile, f: str, working_dir: str):
+        target_file_path = os.path.join(working_dir, f)
+        if not os.path.exists(target_file_path):
+            zf.extract(f, working_dir)
+            # os.rename(os.path.join(working_dir, f), target_file_path)
 
     def unzip_and_clean(self):
-        pass
+        with ZipFile(self.config.local_data_file, mode='r') as zipObj:
+            list_of_files = zipObj.namelist()
+            # Extracting the jpg files
+            updated_list_of_file = self.get_updated_list_of_files(list_of_files)
+            for f in tqdm(updated_list_of_file):
+                # For showing progress of preprocessing.
+                self.preprocess(zipObj, f, self.config.unzip_dir)
