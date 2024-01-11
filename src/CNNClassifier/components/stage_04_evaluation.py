@@ -2,7 +2,7 @@
 import tensorflow as tf
 from pathlib import Path
 from CNNClassifier.entity import EvaluationConfig
-from CNNClassifier.utils import save_json
+from CNNClassifier.utils.utils import save_json
 
 
 class Evaluation:

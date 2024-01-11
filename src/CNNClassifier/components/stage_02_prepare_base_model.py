@@ -17,7 +17,7 @@ class PrepareBaseModel:
         # Save the loaded base model
         self.save_model(path=self.config.base_model_path, model=self.model)
 
-    @staticmethod
+    @staticmethod           # This function can be called w/o creating an object instance
     def prepare_full_model(model, classes, freeze_all, freeze_till, learning_rate):
         '''
             This function is used to set various parameters of the base model and finally prepare the full model to be used for training.

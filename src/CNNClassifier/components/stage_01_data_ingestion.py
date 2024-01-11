@@ -13,7 +13,7 @@ from CNNClassifier import logger     # The first file that will be executed is  
 from pathlib import Path
 from tqdm import tqdm           # To showcase the Progressbar
 from CNNClassifier.entity import DataIngestionConfig  # Import the config for input
-from CNNClassifier.utils import utils
+from CNNClassifier.utils.utils import utils
 
 
 class DataIngestion:
